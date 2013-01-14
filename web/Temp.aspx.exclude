@@ -1,0 +1,257 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Temp.aspx.cs" Inherits="Temp" %>
+<%@ Register TagName="head" TagPrefix="UC" Src="~/control/head.ascx" %>
+<%@ Register TagName="foot" TagPrefix="UC" Src="~/control/foot.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>天键包装 打包机 封箱机 收缩机 缠绕机</title>
+<meta name="keywords" content="天键包装 打包机 封箱机 收缩机 缠绕机" />
+<meta name="description" content="天键包装 打包机 封箱机 收缩机 缠绕机" />
+
+<link href="style/main.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" src="/Scripts/Admin.js"></script>
+<script type="text/javascript" type="text/javascript" src="js/ScrollPic.js"></script>
+<script type="text/javascript" src="js/AC_RunActiveContent.js"></script>
+<script type="text/javascript" src="js/left.js" ></script>
+<script type="text/javascript">
+<!--
+function killErrors() {
+    return true;
+}
+window.onerror = killErrors;
+//-->
+</script>
+
+</head>
+
+<body>
+<UC:head ID="head1" runat="server" />
+
+<div class="clear"></div>
+<div id="banner">
+<div id="bannercontent">
+
+<SCRIPT type=text/javascript>
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0','width','980','height','350','src','swf/newPro','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','bgcolor','#FFFFFF','menu','false','flashvars','bcastr_file=images/b1.jpg|images/b2.jpg|images/b3.jpg&bcastr_link=#|#|#','wmode','transparent','movie','swf/newPro' ); //end AC code
+            </SCRIPT>
+            
+            </div></div>
+<div class="clear"></div>
+
+<div id="productlist">
+<div id="indexproduct-content">
+<div id="indexproductkid">
+<table width="640" border="0" cellpadding="0" cellspacing="0" style=" padding:0; margin:0;margin-top:60px; margin-left:10px;">
+  <tr>
+    <td valign="top" ><p class="kidtitle" ><a href="ProductList.Asp-SortID=6.htm" tppabs="http://www.tianjianbz.com/ProductList.Asp?SortID=6">打包机系列</a></p>
+    <ul>
+        <li class="li2">半自动打包机</li>
+        <li class="li2">全自动打包机</li>
+        <li class="li2">无人化打包机</li>
+        <li class="li2">侧打式打包机</li>
+        </ul>
+    </td>
+    
+    <td valign="top"><p class="kidtitle"><a href="ProductList.Asp-SortID=2.htm" tppabs="http://www.tianjianbz.com/ProductList.Asp?SortID=2">封箱机系列</a></p>
+        <ul>
+        <li class="li2">一字型封箱机</li>
+        <li class="li2">工字型封箱机</li>
+        <li class="li2">自动折盖封箱机</li>
+        <li class="li2">开箱机</li>
+        <li class="li2">纸箱成形机</li></ul>
+    </td>
+    <td valign="top"><p class="kidtitle"><a href="ProductList.Asp-SortID=1.htm" tppabs="http://www.tianjianbz.com/ProductList.Asp?SortID=1">收缩机系列</a></p>
+        <ul>
+        <li class="li2">PVC收缩机</li>
+        <li class="li2">POF收缩机</li>
+        <li class="li2">PE收缩机</li>
+        <li class="li2">套袋机</li></ul>
+    </td>
+    <td valign="top"><p class="kidtitle"><a href="ProductList.Asp-SortID=3.htm" tppabs="http://www.tianjianbz.com/ProductList.Asp?SortID=3">缠绕机系列</a></p>
+        <ul>
+        <li class="li2">预拉型缠绕机</li>
+        <li class="li2">阻拉型缠绕机</li>
+        <li class="li2">全自动缠绕机</li>
+        <li class="li2">在线式缠绕机</li></ul>
+    </td>
+    <td valign="top"><p class="kidtitle"><a href="ProductList.Asp-SortID=7.htm" tppabs="http://www.tianjianbz.com/ProductList.Asp?SortID=7">其它机械</a></p>
+        <ul>
+        <li class="li2">无动力辊道输送线</li>
+        <li class="li2">动力辊道输送线</li>
+        <li class="li2">抽真空机</li>
+        <li class="li2">喷码机 </li>
+        </ul>
+    </td>
+  </tr>
+</table>
+
+
+</ul>
+
+</div>
+<div id="video">
+<div style="width:274px; margin-left:7px; margin-top:7px;">
+<embed src="../player.youku.com/player.php/sid/XMjYyMzM2MDQ0/v.swf" tppabs="http://player.youku.com/player.php/sid/XMjYyMzM2MDQ0/v.swf" quality="high" width="274" height="218" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed>
+
+
+</div></div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="indexpro">
+<div id="indexpro-con">
+
+ <div class="ny2010">
+<div id="demo" style="overflow:hidden; width:920px; height:165px; margin:0px 0px 0 30px; display:inline; float:left;" onMouseMove="MoveDiv(event);" onMouseOut="MoveOutDiv();">
+<div id="demo1" style="width:100%;">
+<table cellspacing=0 cellpadding=0>
+<tbody>
+<tr valign=top>
+<td valign=top nowrap>
+ <table cellpadding="0" cellspacing="0" align="center">
+  <tr>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=53.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=53"><img src="uploadfile/20110615102225734a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110615102225734a.jpg" alt="TJ-90低台半自动打包机" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=53.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=53" title="TJ-90低台半自动打包机"><font color="">TJ-90低台半自动打包机…</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=22.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=22"><img src="uploadfile/20110614145434436a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614145434436a.jpg" alt="TJ-101A全自动打包机" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=22.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=22" title="TJ-101A全自动打包机"><font color="">TJ-101A全自动打包机</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=23.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=23"><img src="uploadfile/20110614145702884a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614145702884a.jpg" alt="TJ-101B全自动打包机" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=23.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=23" title="TJ-101B全自动打包机"><font color="">TJ-101B全自动打包机</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=28.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=28"><img src="uploadfile/20110614150445728a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614150445728a.jpg" alt="TJ-102A无人化打包机" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=28.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=28" title="TJ-102A无人化打包机"><font color="">TJ-102A无人化打包机</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=29.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=29"><img src="uploadfile/20110614150553718a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614150553718a.jpg" alt="TJ-102B无人化打包机" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=29.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=29" title="TJ-102B无人化打包机"><font color="">TJ-102B无人化打包机</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=37.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=37"><img src="uploadfile/20110614153044328a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614153044328a.jpg" alt="自动封箱机TJ-FJ-50P" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=37.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=37" title="自动封箱机TJ-FJ-50P"><font color="">自动封箱机TJ-FJ-50P</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=40.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=40"><img src="uploadfile/20110614154256780a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614154256780a.jpg" alt="自动封箱机TJ-FJ-50" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=40.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=40" title="自动封箱机TJ-FJ-50"><font color="">自动封箱机TJ-FJ-50</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=46.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=46"><img src="uploadfile/20110614154902494a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614154902494a.jpg" alt="角边自动封箱机TJ-FJ-P1" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=46.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=46" title="角边自动封箱机TJ-FJ-P1"><font color="">角边自动封箱机TJ-FJ-…</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+    <td><table cellpadding="2" cellspacing="0" >
+        <tr>
+          <td align="center"><a href="ProductView.Asp-ID=48.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=48"><img src="uploadfile/20110614155022380a.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110614155022380a.jpg" alt="TJ-K40自动开箱机" width="126" height="126" border="0" style="padding: 3px;width:150px; margin-right:20px;" /></a></td>
+        </tr>
+        <tr>
+          <td style="height:30px; text-align:center;font-size:12px; font-family:"宋体"; "><a href="ProductView.Asp-ID=48.htm" tppabs="http://www.tianjianbz.com/ProductView.Asp?ID=48" title="TJ-K40自动开箱机"><font color="">TJ-K40自动开箱机</font></a> </td>
+        </tr>
+      </table></td>
+    <td width="1"></td>
+  </tr>
+</table>
+
+</td>
+<td width="0">
+<div id="demo2" style="width:100%;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+document.getElementById("demo2").innerHTML = document.getElementById("demo1").innerHTML;
+MyMar=setInterval(Marquee,speed);
+</script>          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+</div>
+</div>
+<div></div>
+<div class="clear"></div>
+<div id="index-company">
+<div id="com">
+<div id="company-pic"><div style="padding-top:50px;">          <div class="company"><div class="company-pic"><a href="uploadfile/20110425173952345.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110425173952345.jpg" target="_blank"><img src="uploadfile/20110425173952345.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110425173952345.jpg" alt="公司环境2" width="184" height="123" border="0" /></a></div>
+          <div  class="company-name"><a href="about.Asp-ID=7.htm" tppabs="http://www.tianjianbz.com/about.Asp?ID=7" title="公司环境2"><font color="">公司环境2</font></a> </div>
+        </div>
+          <div class="company"><div class="company-pic"><a href="uploadfile/20110425173921525.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110425173921525.jpg" target="_blank"><img src="uploadfile/20110425173921525.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20110425173921525.jpg" alt="公司环境1" width="184" height="123" border="0" /></a></div>
+          <div  class="company-name"><a href="about.Asp-ID=6.htm" tppabs="http://www.tianjianbz.com/about.Asp?ID=6" title="公司环境1"><font color="">公司环境1</font></a> </div>
+        </div>
+</div></div>
+<div id="news-pic"><div class="picNews"><div class="lpicnews"><img src="uploadfile/20111015095627757.jpg" tppabs="http://www.tianjianbz.com/uploadfile/20111015095627757.jpg"/></div><div class="lpicnewsright"><span class="name"><a href="NewsView.asp-ID=14.htm" tppabs="http://www.tianjianbz.com/NewsView.asp?ID=14">天键包装公司全力赞助  南头镇“五人飞艇赛”</a></span><br>天键包装公司全力赞助&nbsp;南头镇“五人飞艇赛”&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2011年9月24日上午9时30分，南头镇2011年“五人飞艇赛”开赛，今年的…</div></div><div class="clear"></div><div class="textNews"><ul class="newslisttitle"><li><a href="NewsView.asp-ID=4.htm" tppabs="http://www.tianjianbz.com/NewsView.asp?ID=4" title="收缩包装机的收缩原理与经济效益">收缩包装机的收缩原理与经济效益</a></li></ul><a href="NewsList-1.asp.htm" tppabs="http://www.tianjianbz.com/NewsList.asp"><img src="Images/more.jpg" tppabs="http://www.tianjianbz.com/Images/more.jpg" style="float:right;margin-top:5px;"/></a></div></div>
+</div></div>
+
+
+
+
+
+<div class="clear"></div>
+<UC:foot ID="foot1" runat="server" />
+
+<script type="text/javascript" src=" ../chat.53kf.com/kf.php-arg=tianjianbz&style=1" tppabs="http://chat.53kf.com/kf.php?arg=tianjianbz&style=1"></script>
+
+
+</body>
+</html>

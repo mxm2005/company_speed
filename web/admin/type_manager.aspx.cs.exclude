@@ -1,0 +1,171 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class admin_type_manager : System.Web.UI.Page
+{
+    Mxm.DAL.product_type prodMgr = new Mxm.DAL.product_type();
+    Mxm.DAL.art_type artMgr = new Mxm.DAL.art_type();
+    Mxm.DAL.message_type msgMgr = new Mxm.DAL.message_type();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            BindArtType();
+        }
+    }
+
+    private void BindArtType()
+    {
+        IList<Mxm.Model.art_type> list = artMgr.GetListArray("");
+        rptList.DataSource = list;
+        rptList.DataBind();
+    }
+    private void BindProductType()
+    {
+        IList<Mxm.Model.product_type> list = prodMgr.GetListArray("");
+        rptList.DataSource = list;
+        rptList.DataBind();
+    }
+    private void BindMsgType()
+    {
+        IList<Mxm.Model.message_type> list = msgMgr.GetListArray("");
+        rptList.DataSource = list;
+        rptList.DataBind();
+    }
+
+    protected void OnRdoChanged(object sender, EventArgs e)
+    {
+        string type = "";
+        if (rdoList.SelectedIndex > -1)
+        {
+            type = rdoList.SelectedValue;
+        }
+        switch (type)
+        {
+            case "文章分类":
+                BindArtType();
+                break;
+            case "产品分类":
+                BindProductType();
+                break;
+            case "留言分类":
+                BindMsgType(); 
+                break;
+        }
+    }
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        string type = "";
+        if (rdoList.SelectedIndex > -1)
+        {
+            type = rdoList.SelectedValue;
+        }
+        switch (type)
+        {
+            case "文章分类":
+                AddArtType();
+                break;
+            case "产品分类":
+                AddProductType();
+                break;
+            case "留言分类":
+                AddMsgType();
+                break;
+            case "":
+                Mxm.Common.MessageBox.Show(this, "请先选择要创建的分类类别");
+                break;
+        }
+    }
+
+    protected void delete_type(object sender, CommandEventArgs e)
+    {
+        string type = "";
+        if (rdoList.SelectedIndex > -1)
+        {
+            type = rdoList.SelectedValue;
+        }
+        switch (type)
+        {
+            case "文章分类":
+                artMgr.Delete(int.Parse(e.CommandArgument.ToString()));
+                break;
+            case "产品分类":
+                prodMgr.Delete(int.Parse(e.CommandArgument.ToString()));
+                break;
+            case "留言分类":
+                msgMgr.Delete(int.Parse(e.CommandArgument.ToString()));
+                break;
+        }
+        OnRdoChanged(null, null);
+    }
+
+    private void AddArtType()
+    {
+        if (string.IsNullOrEmpty(txtTypeName.Text.Trim()))
+        {
+            Mxm.Common.MessageBox.Show(this, "分类名称不允许为空");
+            return;
+        }
+        Mxm.Model.art_type mo = new Mxm.Model.art_type();
+        mo.type_name = txtTypeName.Text.Trim();
+        try
+        {
+            artMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+        }
+        OnRdoChanged(null, null);
+    }
+    private void AddProductType()
+    {
+        if (string.IsNullOrEmpty(txtTypeName.Text.Trim()))
+        {
+            Mxm.Common.MessageBox.Show(this, "分类名称不允许为空");
+            return;
+        }
+        Mxm.Model.product_type mo = new Mxm.Model.product_type();
+        mo.type_name = txtTypeName.Text.Trim();
+        try
+        {
+            prodMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+        }
+        OnRdoChanged(null, null);
+    }
+    private void AddMsgType()
+    {
+        if (string.IsNullOrEmpty(txtTypeName.Text.Trim()))
+        {
+            Mxm.Common.MessageBox.Show(this, "分类名称不允许为空");
+            return;
+        }
+        Mxm.Model.message_type mo = new Mxm.Model.message_type();
+        mo.type_name = txtTypeName.Text.Trim();
+        try
+        {
+            msgMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+        }
+        OnRdoChanged(null, null);
+    }
+}

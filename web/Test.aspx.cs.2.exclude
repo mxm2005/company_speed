@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+public partial class Test : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //string tmp = "100||456";
+        //string str = tmp.Substring(tmp.IndexOf("||") + 2, tmp.Length - tmp.IndexOf("||") - 2);
+        //Response.Write(str);
+    }
+
+    protected void btnClick(object sender, EventArgs e)
+    {
+
+        Mxm.Common.WriteError.ReplaceTxt(Mxm.Common.WriteError.GetServerPath() + "\\log.txt",
+            "count_port1=123#count_port2=24524#count_port3=646");
+        System.Collections.Specialized.NameValueCollection coll = new System.Collections.Specialized.NameValueCollection();
+        string[] arr = Mxm.Common.WriteError.ReadTxt(Mxm.Common.WriteError.GetServerPath() + "\\log.txt").Split('#');
+        for (int i = 0; i < arr.Length; i++)
+        {
+            coll.Add(arr[i].Split('=')[0], arr[i].Split('=')[1]);
+        }
+        for(int i=0;i<coll.Count;i++)
+        {
+            Response.Write(coll.Keys[i] + ":" + coll[i]);
+            Response.Write("<br />");
+        }
+        
+        Mxm.Common.MessageBox.Show(this,"OK");
+    }
+}

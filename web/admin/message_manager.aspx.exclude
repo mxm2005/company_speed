@@ -1,0 +1,82 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="message_manager.aspx.cs" Inherits="admin_message_manager" %>
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="pager" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>留言管理</title>
+    <link type="text/css" rel="Stylesheet" href="/css/admin.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="margin: 5px;">
+     <asp:Repeater ID="rptList" runat="server">
+            <HeaderTemplate>
+                <table id="tbLst" class="tb_grid" style="width: 100%;">
+                    <tr class="tr_head">
+                        <th scope="col" width="20" style="text-align:center;">
+                            <input id="chkAll" type="checkbox" onclick="selectAll('chkAll')" />
+                        </th>
+                        <th scope="col" width="200">
+                            标题
+                        </th>
+                        <th scope="col" width="450">
+                            内容
+                        </th>
+                        <th scope="col" width="140">
+                            时间
+                        </th>
+                        <th scope="col">
+                            操作
+                        </th>
+                    </tr>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr class="tr_light">
+                    <td style="text-align:center;">
+                        <asp:CheckBox ID="chkItem" runat="server"></asp:CheckBox>
+                        <span style="display:none;"><%# Eval("mid")%></span>
+                    </td>
+                    <td>
+                        <a href='/article_detail.aspx?aid=<%# Eval("mid")%>' target="_blank"><%# Mxm.Common.Comm.GetShortString(Eval("title").ToString(), 15)%></a>
+                    </td>
+                    <td>
+                        <%# Mxm.Common.Comm.GetShortString( Eval( "content" ).ToString(),30)%>
+                    </td>
+                    <td>
+                        <%# Eval( "create_time" )%>
+                    </td>
+                    <td>                        
+                        <a href='<%# Eval("mid") %>'>删除</a>&nbsp;&nbsp;<a href='/admin/message_reply.aspx?mid=<%# Eval("mid") %>'>回复</a>
+                    </td>
+                </tr>
+            </ItemTemplate>
+            <AlternatingItemTemplate>
+                <tr class="tr_blue">
+                    <td style="text-align:center;">
+                        <asp:CheckBox ID="chkItem" runat="server"></asp:CheckBox>
+                        <span style="display:none;"><%# Eval("mid")%></span>
+                    </td>
+                    <td>
+                        <a href='/article_detail.aspx?aid=<%# Eval("mid")%>' target="_blank"><%# Eval("title")%></a>
+                    </td>
+                    <td>
+                        <%# Mxm.Common.Comm.GetShortString( Eval( "content" ).ToString(),30)%>
+                    </td>
+                    <td>
+                        <%# Eval( "create_time" )%>
+                    </td>
+                    <td>                        
+                        <a href='<%# Eval("mid") %>'>删除</a>&nbsp;&nbsp;<a href='/admin/message_reply.aspx?mid=<%# Eval("mid") %>'>回复</a>
+                    </td>
+                </tr>
+            </AlternatingItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+    <pager:AspNetPager ID="pager1" runat="server" UrlPaging="true" HorizontalAlign="Center"></pager:AspNetPager>
+    </div>
+    </form>
+</body>
+</html>

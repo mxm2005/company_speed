@@ -1,0 +1,150 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class admin_type_add : System.Web.UI.Page
+{
+    int typeid = 0;
+    string act = "";
+    Mxm.DAL.art_type artMgr = new Mxm.DAL.art_type();
+    Mxm.DAL.product_type prodMgr = new Mxm.DAL.product_type();
+    Mxm.DAL.message_type msgMgr = new Mxm.DAL.message_type();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        InitArgs();
+        BindType();
+    }
+
+    private void InitArgs()
+    {
+        if (Request.QueryString["typeid"] != null)
+        {
+            typeid = int.Parse(Request.QueryString["typeid"].ToString());
+        }
+        if (Request.QueryString["act"] != null)
+        {
+            act = Request.QueryString["act"].ToString();
+        }
+    }
+
+    private void BindType()
+    {
+        if (typeid <= 0 || string.IsNullOrEmpty(act))
+        {
+            Mxm.Common.MessageBox.Show(this, "输入参数错误");
+            return;
+        }
+        switch (act)
+        {
+            case "文章分类":
+                lblType.Text = artMgr.GetModel(typeid).type_name;
+                break;
+            case "产品分类":
+                lblType.Text = prodMgr.GetModel(typeid).type_name;
+                break;
+            case "留言分类":
+                lblType.Text = msgMgr.GetModel(typeid).type_name;
+                break;
+        }
+    }
+
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        if (typeid <= 0 || string.IsNullOrEmpty(act))
+        {
+            Mxm.Common.MessageBox.Show(this, "输入参数错误");
+            return;
+        }
+        switch (act)
+        {
+            case "文章分类":
+                AddArtType();
+                break;
+            case "产品分类":
+                AddProductType();
+                break;
+            case "留言分类":
+                AddMsgType();
+                break;
+        }
+    }
+    private void AddProductType()
+    {
+        string type_name = txtTypeName.Text.Trim();
+        try
+        {
+            bool isExits = prodMgr.Exists(type_name);
+            if (isExits)
+            {
+                Mxm.Common.MessageBox.Show(this, "添加失败，已存在相同的分类");
+                return;
+            }
+
+            Mxm.Model.product_type mo = new Mxm.Model.product_type();
+            mo.parent_id = typeid;
+            mo.type_name = type_name;
+            prodMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+            Mxm.Common.MessageBox.Show(this, "添加失败，发生异常");
+        }
+    }     
+    private void AddArtType()
+    {
+        string type_name = txtTypeName.Text.Trim();
+        try
+        {
+            bool isExits = artMgr.Exists(type_name);
+            if (isExits)
+            {
+                Mxm.Common.MessageBox.Show(this, "添加失败，已存在相同的分类");
+                return;
+            }
+
+            Mxm.Model.art_type mo = new Mxm.Model.art_type();
+            mo.type_name = type_name;
+            artMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+            Mxm.Common.MessageBox.Show(this, "添加失败，发生异常");
+        }
+    }
+    private void AddMsgType()
+    {
+        string type_name = txtTypeName.Text.Trim();
+        try
+        {
+            bool isExits = msgMgr.Exists(type_name);
+            if (isExits)
+            {
+                Mxm.Common.MessageBox.Show(this, "添加失败，已存在相同的分类");
+                return;
+            }
+
+            Mxm.Model.message_type mo = new Mxm.Model.message_type();
+            mo.type_name = type_name;
+            msgMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+            Mxm.Common.MessageBox.Show(this, "添加失败，发生异常");
+        }
+    }
+
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table1>
+    <key>about</key>
+    <file>/uploadfile/html/about.html</file>
+    <name>关于我们</name>
+  </Table1>
+  <Table1>
+    <key>qualification</key>
+    <file>/uploadfile/html/qualification.html</file>
+    <name>企业资质</name>
+  </Table1>
+  <Table1>
+    <key>contact</key>
+    <file>/uploadfile/html/contact.html</file>
+    <name>联系我们</name>
+  </Table1>
+</NewDataSet>

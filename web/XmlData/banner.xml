@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table1>
+    <img>/uploadfile/img/product_05.jpg</img>
+    <key>about</key>
+  </Table1>
+  <Table1>
+    <img>/uploadfile/img/product_05.jpg</img>
+    <key>product</key>
+  </Table1>
+  <Table1>
+    <img>/uploadfile/img/product_05.jpg</img>
+    <key>productlist</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>article</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>solution</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>download</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>news</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>qualification</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>talent</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>technical</key>
+  </Table1>
+  <Table1>
+    <img>/images/product_05.jpg</img>
+    <key>contact</key>
+  </Table1>
+</NewDataSet>

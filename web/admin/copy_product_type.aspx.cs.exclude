@@ -1,0 +1,84 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class admin_product_type : System.Web.UI.Page
+{
+    int _parent_id = 0;
+    Mxm.DAL.product_type prodMgr = new Mxm.DAL.product_type();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request.QueryString["parent_id"] != null)
+        {
+            _parent_id = int.Parse(Request.QueryString["parent_id"].ToString());
+        }
+        ShowParentType();
+        BindProductType();
+    }
+
+    private void ShowParentType()
+    {
+        if (_parent_id > 0)
+        {
+            lbl_parent_type.Text = GetEachType(_parent_id);
+        }
+    }
+
+    private string GetEachType(int type_id)
+    {
+        string strTemp = "<a href='product_type.aspx?parent_id={0}'>{1}</a>";
+        string resVal = "";
+        if (type_id > 0)
+        {
+            Mxm.Model.product_type mo = prodMgr.GetModel(type_id);
+            resVal = string.Format(strTemp, mo.type_id, mo.type_name);
+            if (mo.parent_id > 0)
+            {
+                resVal = GetEachType(mo.parent_id) + "-->" + resVal;
+            }
+        }
+        return resVal;
+    }
+
+    private void BindProductType()
+    {
+        IList<Mxm.Model.product_type> list = prodMgr.GetListArray("parent_id=" + _parent_id);
+        rptList.DataSource = list;
+        rptList.DataBind();
+    }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(txtTypeName.Text.Trim()))
+        {
+            Mxm.Common.MessageBox.Show(this, "分类名称不允许为空");
+            return;
+        }
+        Mxm.Model.product_type mo = new Mxm.Model.product_type();
+        mo.type_name = txtTypeName.Text.Trim();
+        mo.parent_id = _parent_id;
+        try
+        {
+            prodMgr.Add(mo);
+            Mxm.Common.MessageBox.Show(this, "添加成功");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.StackTrace);
+        } 
+        Response.AddHeader("Refresh", "0"); 
+    }
+
+    protected void delete_type(object sender, CommandEventArgs e)
+    {
+        prodMgr.Delete(int.Parse(e.CommandArgument.ToString()));
+        Response.AddHeader("Refresh", "0"); 
+    }
+}

@@ -1,0 +1,490 @@
+using System;
+namespace Mxm.Model
+{
+	/// <summary>
+	/// 实体类feed_back 。(属性说明自动提取数据库字段的描述信息)
+	/// </summary>
+	public class feed_back
+	{
+		public feed_back()
+		{}
+		#region Model
+		private int _feed_id;
+		private string _title;
+		private string _linkman;
+		private string _corperation;
+		private string _link_address;
+		private decimal? _postcode;
+		private string _link_tel;
+		private string _fax;
+		private decimal? _mobile;
+		private string _email;
+		private string _msg_content;
+		/// <summary>
+		/// 
+		/// </summary>
+		public int feed_id
+		{
+			set{ _feed_id=value;}
+			get{return _feed_id;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string title
+		{
+			set{ _title=value;}
+			get{return _title;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string linkman
+		{
+			set{ _linkman=value;}
+			get{return _linkman;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string corperation
+		{
+			set{ _corperation=value;}
+			get{return _corperation;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string link_address
+		{
+			set{ _link_address=value;}
+			get{return _link_address;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? postcode
+		{
+			set{ _postcode=value;}
+			get{return _postcode;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string link_tel
+		{
+			set{ _link_tel=value;}
+			get{return _link_tel;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string fax
+		{
+			set{ _fax=value;}
+			get{return _fax;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? mobile
+		{
+			set{ _mobile=value;}
+			get{return _mobile;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string email
+		{
+			set{ _email=value;}
+			get{return _email;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string msg_content
+		{
+			set{ _msg_content=value;}
+			get{return _msg_content;}
+		}
+		#endregion Model
+
+	}
+}
+
+
+using System;
+using System.Data;
+using System.Text;
+using System.Collections.Generic;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
+using System.Data.Common;
+using Maticsoft.DBUtility;//请先添加引用
+namespace Mxm.DAL
+{
+	/// <summary>
+	/// 数据访问类feed_back。
+	/// </summary>
+	public class feed_back
+	{
+		public feed_back()
+		{}
+		#region  成员方法
+
+		/// <summary>
+		/// 得到最大ID
+		/// </summary>
+		public int GetMaxId()
+		{
+			string strsql = "select max(feed_id)+1 from feed_back";
+			Database db = DatabaseFactory.CreateDatabase();
+			object obj = db.ExecuteScalar(CommandType.Text, strsql);
+			if (obj != null && obj != DBNull.Value)
+			{
+				return int.Parse(obj.ToString());
+			}
+			return 1;
+		}
+
+		/// <summary>
+		/// 是否存在该记录
+		/// </summary>
+		public bool Exists(int feed_id)
+		{
+			Database db = DatabaseFactory.CreateDatabase();
+			StringBuilder strSql = new StringBuilder();
+			strSql.Append("select count(1) from feed_back where feed_id=@feed_id ");
+			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+			db.AddInParameter(dbCommand, "feed_id", DbType.Int32,feed_id);
+			int cmdresult;
+			object obj = db.ExecuteScalar(dbCommand);
+			if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+			{
+				cmdresult = 0;
+			}
+			else
+			{
+				cmdresult = int.Parse(obj.ToString());
+			}
+			if (cmdresult == 0)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+
+
+		/// <summary>
+		/// 增加一条数据
+		/// </summary>
+		public void Add(Mxm.Model.feed_back model)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("insert into feed_back(");
+			strSql.Append("feed_id,title,linkman,corperation,link_address,postcode,link_tel,fax,mobile,email,msg_content)");
+
+			strSql.Append(" values (");
+			strSql.Append("@feed_id,@title,@linkman,@corperation,@link_address,@postcode,@link_tel,@fax,@mobile,@email,@msg_content)");
+			Database db = DatabaseFactory.CreateDatabase();
+			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+			db.AddInParameter(dbCommand, "feed_id", DbType.Int32, model.feed_id);
+			db.AddInParameter(dbCommand, "title", DbType.String, model.title);
+			db.AddInParameter(dbCommand, "linkman", DbType.String, model.linkman);
+			db.AddInParameter(dbCommand, "corperation", DbType.String, model.corperation);
+			db.AddInParameter(dbCommand, "link_address", DbType.String, model.link_address);
+			db.AddInParameter(dbCommand, "postcode", DbType.Decimal, model.postcode);
+			db.AddInParameter(dbCommand, "link_tel", DbType.String, model.link_tel);
+			db.AddInParameter(dbCommand, "fax", DbType.String, model.fax);
+			db.AddInParameter(dbCommand, "mobile", DbType.Decimal, model.mobile);
+			db.AddInParameter(dbCommand, "email", DbType.String, model.email);
+			db.AddInParameter(dbCommand, "msg_content", DbType.String, model.msg_content);
+			db.ExecuteNonQuery(dbCommand);
+		}
+		/// <summary>
+		/// 更新一条数据
+		/// </summary>
+		public void Update(Mxm.Model.feed_back model)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("update feed_back set ");
+			strSql.Append("title=@title,");
+			strSql.Append("linkman=@linkman,");
+			strSql.Append("corperation=@corperation,");
+			strSql.Append("link_address=@link_address,");
+			strSql.Append("postcode=@postcode,");
+			strSql.Append("link_tel=@link_tel,");
+			strSql.Append("fax=@fax,");
+			strSql.Append("mobile=@mobile,");
+			strSql.Append("email=@email,");
+			strSql.Append("msg_content=@msg_content");
+			strSql.Append(" where feed_id=@feed_id ");
+			Database db = DatabaseFactory.CreateDatabase();
+			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+			db.AddInParameter(dbCommand, "feed_id", DbType.Int32, model.feed_id);
+			db.AddInParameter(dbCommand, "title", DbType.String, model.title);
+			db.AddInParameter(dbCommand, "linkman", DbType.String, model.linkman);
+			db.AddInParameter(dbCommand, "corperation", DbType.String, model.corperation);
+			db.AddInParameter(dbCommand, "link_address", DbType.String, model.link_address);
+			db.AddInParameter(dbCommand, "postcode", DbType.Decimal, model.postcode);
+			db.AddInParameter(dbCommand, "link_tel", DbType.String, model.link_tel);
+			db.AddInParameter(dbCommand, "fax", DbType.String, model.fax);
+			db.AddInParameter(dbCommand, "mobile", DbType.Decimal, model.mobile);
+			db.AddInParameter(dbCommand, "email", DbType.String, model.email);
+			db.AddInParameter(dbCommand, "msg_content", DbType.String, model.msg_content);
+			db.ExecuteNonQuery(dbCommand);
+
+		}
+
+		/// <summary>
+		/// 删除一条数据
+		/// </summary>
+		public void Delete(int feed_id)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("delete feed_back ");
+			strSql.Append(" where feed_id=@feed_id ");
+			Database db = DatabaseFactory.CreateDatabase();
+			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+			db.AddInParameter(dbCommand, "feed_id", DbType.Int32,feed_id);
+			db.ExecuteNonQuery(dbCommand);
+
+		}
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Mxm.Model.feed_back GetModel(int feed_id)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select feed_id,title,linkman,corperation,link_address,postcode,link_tel,fax,mobile,email,msg_content from feed_back ");
+			strSql.Append(" where feed_id=@feed_id ");
+			Database db = DatabaseFactory.CreateDatabase();
+			DbCommand dbCommand = db.GetSqlStringCommand(strSql.ToString());
+			db.AddInParameter(dbCommand, "feed_id", DbType.Int32,feed_id);
+			Mxm.Model.feed_back model=null;
+			using (IDataReader dataReader = db.ExecuteReader(dbCommand))
+			{
+				if(dataReader.Read())
+				{
+					model=ReaderBind(dataReader);
+				}
+			}
+			return model;
+		}
+
+		/// <summary>
+		/// 获得数据列表
+		/// </summary>
+		public DataSet GetList(string strWhere)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select feed_id,title,linkman,corperation,link_address,postcode,link_tel,fax,mobile,email,msg_content ");
+			strSql.Append(" FROM feed_back ");
+			if(strWhere.Trim()!="")
+			{
+				strSql.Append(" where "+strWhere);
+			}
+			Database db = DatabaseFactory.CreateDatabase();
+			return db.ExecuteDataSet(CommandType.Text, strSql.ToString());
+		}
+
+		/*
+		/// <summary>
+		/// 分页获取数据列表
+		/// </summary>
+		public DataSet GetList(int PageSize,int PageIndex,string strWhere)
+		{
+			Database db = DatabaseFactory.CreateDatabase();
+			DbCommand dbCommand = db.GetStoredProcCommand("UP_GetRecordByPage");
+			db.AddInParameter(dbCommand, "tblName", DbType.AnsiString, "feed_back");
+			db.AddInParameter(dbCommand, "fldName", DbType.AnsiString, "ID");
+			db.AddInParameter(dbCommand, "PageSize", DbType.Int32, PageSize);
+			db.AddInParameter(dbCommand, "PageIndex", DbType.Int32, PageIndex);
+			db.AddInParameter(dbCommand, "IsReCount", DbType.Boolean, 0);
+			db.AddInParameter(dbCommand, "OrderType", DbType.Boolean, 0);
+			db.AddInParameter(dbCommand, "strWhere", DbType.AnsiString, strWhere);
+			return db.ExecuteDataSet(dbCommand);
+		}*/
+
+		/// <summary>
+		/// 获得数据列表（比DataSet效率高，推荐使用）
+		/// </summary>
+		public List<Mxm.Model.feed_back> GetListArray(string strWhere)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select feed_id,title,linkman,corperation,link_address,postcode,link_tel,fax,mobile,email,msg_content ");
+			strSql.Append(" FROM feed_back ");
+			if(strWhere.Trim()!="")
+			{
+				strSql.Append(" where "+strWhere);
+			}
+			List<Mxm.Model.feed_back> list = new List<Mxm.Model.feed_back>();
+			Database db = DatabaseFactory.CreateDatabase();
+			using (IDataReader dataReader = db.ExecuteReader(CommandType.Text, strSql.ToString()))
+			{
+				while (dataReader.Read())
+				{
+					list.Add(ReaderBind(dataReader));
+				}
+			}
+			return list;
+		}
+
+
+		/// <summary>
+		/// 对象实体绑定数据
+		/// </summary>
+		public Mxm.Model.feed_back ReaderBind(IDataReader dataReader)
+		{
+			Mxm.Model.feed_back model=new Mxm.Model.feed_back();
+			object ojb; 
+			ojb = dataReader["feed_id"];
+			if(ojb != null && ojb != DBNull.Value)
+			{
+				model.feed_id=(int)ojb;
+			}
+			model.title=dataReader["title"].ToString();
+			model.linkman=dataReader["linkman"].ToString();
+			model.corperation=dataReader["corperation"].ToString();
+			model.link_address=dataReader["link_address"].ToString();
+			ojb = dataReader["postcode"];
+			if(ojb != null && ojb != DBNull.Value)
+			{
+				model.postcode=(decimal)ojb;
+			}
+			model.link_tel=dataReader["link_tel"].ToString();
+			model.fax=dataReader["fax"].ToString();
+			ojb = dataReader["mobile"];
+			if(ojb != null && ojb != DBNull.Value)
+			{
+				model.mobile=(decimal)ojb;
+			}
+			model.email=dataReader["email"].ToString();
+			model.msg_content=dataReader["msg_content"].ToString();
+			return model;
+		}
+
+		#endregion  成员方法
+	}
+}
+
+using System;
+using System.Data;
+using LTP.Common;
+using Mxm.Model;
+namespace Mxm.BLL
+{
+	/// <summary>
+	/// 业务逻辑类feed_back 的摘要说明。
+	/// </summary>
+	public class feed_back
+	{
+		private readonly Mxm.DAL.feed_back dal=new Mxm.DAL.feed_back();
+		public feed_back()
+		{}
+		#region  成员方法
+
+		/// <summary>
+		/// 得到最大ID
+		/// </summary>
+		public int GetMaxId()
+		{
+			return dal.GetMaxId();
+		}
+
+		/// <summary>
+		/// 是否存在该记录
+		/// </summary>
+		public bool Exists(int feed_id)
+		{
+			return dal.Exists(feed_id);
+		}
+
+		/// <summary>
+		/// 增加一条数据
+		/// </summary>
+		public void Add(Mxm.Model.feed_back model)
+		{
+			dal.Add(model);
+		}
+
+		/// <summary>
+		/// 更新一条数据
+		/// </summary>
+		public void Update(Mxm.Model.feed_back model)
+		{
+			dal.Update(model);
+		}
+
+		/// <summary>
+		/// 删除一条数据
+		/// </summary>
+		public void Delete(int feed_id)
+		{
+			dal.Delete(feed_id);
+		}
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Mxm.Model.feed_back GetModel(int feed_id)
+		{
+			return dal.GetModel(feed_id);
+		}
+
+		/// <summary>
+		/// 得到一个对象实体，从缓存中。
+		/// </summary>
+		public Mxm.Model.feed_back GetModelByCache(int feed_id)
+		{
+			string CacheKey = "feed_backModel-" + feed_id;
+			object objModel = LTP.Common.DataCache.GetCache(CacheKey);
+			if (objModel == null)
+			{
+				try
+				{
+					objModel = dal.GetModel(feed_id);
+					if (objModel != null)
+					{
+						int ModelCache = LTP.Common.ConfigHelper.GetConfigInt("ModelCache");
+						LTP.Common.DataCache.SetCache(CacheKey, objModel, DateTime.Now.AddMinutes(ModelCache), TimeSpan.Zero);
+					}
+				}
+				catch{}
+			}
+			return (Mxm.Model.feed_back)objModel;
+		}
+
+		/// <summary>
+		/// 获得数据列表
+		/// </summary>
+		public DataSet GetList(string strWhere)
+		{
+			return dal.GetList(strWhere);
+		}
+
+		/// <summary>
+		/// 获得数据列表
+		/// </summary>
+		public DataSet GetAllList()
+		{
+			return GetList("");
+		}
+
+		/// <summary>
+		/// 获得数据列表
+		/// </summary>
+		//public DataSet GetList(int PageSize,int PageIndex,string strWhere)
+		//{
+			//return dal.GetList(PageSize,PageIndex,strWhere);
+		//}
+
+		#endregion  成员方法
+	}
+}
+

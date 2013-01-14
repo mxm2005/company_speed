@@ -1,0 +1,36 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class admin_feed_detail : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request.QueryString["feed_id"] != null)
+        {
+            int feed_id = int.Parse(Request.QueryString["feed_id"].ToString());
+            Mxm.Model.feed_back mo = new Mxm.DAL.feed_back().GetModel(feed_id);
+
+            if (mo != null)
+            {
+                lbl_address.Text = mo.link_address;
+                lbl_company.Text = mo.corperation;
+                lbl_content.Text = mo.msg_content;
+                lbl_email.Text = mo.email;
+                lbl_fax.Text = mo.fax;
+                lbl_linkman.Text = mo.linkman;
+                lbl_mobile.Text = mo.mobile.ToString();
+                lbl_postcode.Text = mo.postcode.ToString();
+                lbl_tel.Text = mo.link_tel;
+                lbl_Title.Text = mo.title;
+            }
+        }
+    }
+}

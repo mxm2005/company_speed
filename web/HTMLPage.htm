@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>无标题页</title>
+</head>
+<body>
+<input type="file" name="file" id="file" onchange="getImageSize(this)"/>
+ <span id="filemessage"></span><!--用于显示提示信息或者错误信息-->
+
+</body>
+</html>
+<script type="text/javascript">
+
+ function getImageSize(obj){
+                var filemessage=document.getElementById("filemessage");
+                var _file=document.getElementById("file");
+                            var i=_file.value.lastIndexOf('.');
+                            var len=_file.value.length;
+                            var extEndName=_file.value.substring(i+1,len);
+                            var extName="GIF,BMP,JPG,JPEG";//首先对格式进行验证,SWF
+                            if(extName.indexOf(extEndName.toUpperCase())==-1){
+                                filemessage.innerHTML="*您只能输入"+extName+"格式的文件";
+                            }else{
+//                                 if(extEndName.toUpperCase()=='SWF'){//对swf文件不限制大小，因为下边是自己手动限制的
+//                                    filemessage.innerHTML="文件有效";
+//                                 }else{
+                                     var url,image;
+                                    if(obj.files){alert(obj.files[0].name);
+                                       url=obj.files[0].getAsDataURL();
+                                    }else{
+                                       url=obj.value;
+                                       url="file:///"+url;
+                                    }
+                                    image=new Image();alert(url);
+                                    image.src=url;
+                                    image.onload=function(){
+                                      if(image.width>985||image.height>123){
+                                       filemessage.innerHTML="*提示：文件大小不对。您只能上传985*123尺寸的图片或者swf文件";
+                                      }else{
+                                       filemessage.innerHTML="文件有效";
+                                      }
+                                    }
+//                                 }
+                        }
+ }
+
+</script>

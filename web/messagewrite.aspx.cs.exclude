@@ -1,0 +1,59 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class messagewrite : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+    }
+
+    protected void BtnSubmit_Click(object sender, EventArgs e)
+    {
+        if (!IsValid)
+        {
+            Mxm.Common.MessageBox.Show(this, "输入项不正确");
+            return;
+        }
+        Mxm.Model.feed_back mo = new Mxm.Model.feed_back();
+        mo.title = Title.Value.Trim();
+        mo.linkman = Linkman.Value.Trim();
+        mo.email = Email.Value.Trim();
+        mo.msg_content = Content.Value.Trim();
+
+        mo.corperation = Company.Value.Trim();
+        mo.fax = Fax.Value.Trim();
+        mo.link_address = Address.Value.Trim();
+        if (!string.IsNullOrEmpty(ZipCode.Value.Trim()))
+        {
+            mo.postcode = decimal.Parse(ZipCode.Value.Trim());
+        }
+        if (!string.IsNullOrEmpty(Mobile.Value.Trim()))
+        {
+            mo.mobile = decimal.Parse(Mobile.Value.Trim());
+        }
+        mo.link_tel = Telephone.Value.Trim();
+
+        try
+        {
+            if (mo != null)
+            {
+                new Mxm.DAL.feed_back().Add(mo);
+            }
+            Mxm.Common.MessageBox.Show(this, "你的留言已提交，非常感谢你的反馈意见！");
+        }
+        catch (Exception ex)
+        {
+            Mxm.Common.WriteError.WriteTxt(DateTime.Now.ToString() + " " + ex.Message);
+            Mxm.Common.MessageBox.Show(this, "提交失败，请联系管理员");
+        }        
+    }
+}

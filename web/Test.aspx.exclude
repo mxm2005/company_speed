@@ -1,0 +1,76 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Test.aspx.cs" Inherits="Test" %>
+
+<%@ Register TagName="head" TagPrefix="UC" Src="~/control/head.ascx" %>
+<%@ Register TagName="product" TagPrefix="UC" Src="~/control/product_list.ascx" %>
+<%@ Register TagName="foot" TagPrefix="UC" Src="~/control/foot.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>非首页模板</title>    
+    <link href="style/main.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <UC:head ID="head1" runat="server" />
+    <div id="banner">
+        <div id="bannercontent">
+            <img src="images/product_05.jpg" alt="" width="980" height="191" /></div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="position">
+        <p>
+            &nbsp;当前位置：<a href="Index-1.asp.htm" tppabs="http://www.tianjianbz.com/Index.Asp"
+                class="agray">首页</a> - <a href="NewsList-2.asp.htm" tppabs="http://www.tianjianbz.com/NewsList.Asp"
+                    class="agray">新闻动态</a>
+        </p>
+    </div>
+    <div id="content">
+        <div id="content-left">
+            <UC:product ID="prod" runat="server" />
+        </div>
+        <div id="content-right">
+            <div style="padding: 20px; padding-top: 40px; line-height: 2em;">
+                <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                    <tr height="32">
+                        <td width="550" style="color: #FFFFFF; font-weight: bold; background: url(Images/split.gif) no-repeat right center;
+                            background-color: #abacaf">
+                            &nbsp;&nbsp;&nbsp;&nbsp;信息标题</td>
+                        <td align="center" bgcolor="#ABACAF" style="color: #FFFFFF; font-weight: bold">
+                            发布日期</td>
+                    </tr>
+                    <tr height="28">
+                        <td style="background: url(Images/bg2.gif) repeat-x left bottom;">
+                            &nbsp;<img src="images/title.jpg" tppabs="http://www.tianjianbz.com/images/title.jpg"
+                                width="4" height="8" align="absmiddle" />&nbsp;&nbsp;<a href="NewsView-1.asp.htm"
+                                    tppabs="http://www.tianjianbz.com/NewsView.Asp?ID=14"><font color="">天键包装公司全力赞助 南头镇“五人飞艇赛”</font></a></td>
+                        <td align="center" style="background: url(Images/bg2.gif) repeat-x left bottom; color: #999999">
+                            2011.10.14</td>
+                    </tr>
+                    <tr height="28">
+                        <td style="background: url(Images/bg2.gif) repeat-x left bottom;">
+                            &nbsp;<img src="images/title.jpg" tppabs="http://www.tianjianbz.com/images/title.jpg"
+                                width="4" height="8" align="absmiddle" />&nbsp;&nbsp;<a href="NewsView-2.asp.htm"
+                                    tppabs="http://www.tianjianbz.com/NewsView.Asp?ID=4"><font color="">收缩包装机的收缩原理与经济效益</font></a></td>
+                        <td align="center" style="background: url(Images/bg2.gif) repeat-x left bottom; color: #999999">
+                            2011.04.27</td>
+                    </tr>
+                </table>
+                <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                    <tr height="35">
+                        <td align="center">
+                            共<strong style="color: red">2</strong>条记录 页次：<strong style="color: red">1</strong>/1
+                            每页：<strong style="color: red">12</strong>条记录 &nbsp;<strong style="color: red">1</strong>&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <UC:foot ID="foot1" runat="server" />
+</body>
+</html>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+

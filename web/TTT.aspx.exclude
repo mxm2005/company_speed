@@ -1,0 +1,159 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TTT.aspx.cs" Inherits="TTT" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>无标题页</title>
+    <style type="text/css">
+    .mask{ width:100%; height:100%; position: fixed; _position:absolute; background:#000;filter:alpha(opacity=50);-moz-opacity:0.50;opacity:0.50; z-index:100;margin:0;padding:0;}
+    .layer{background:#CCC;position: fixed; _position:absolute;z-index:130;padding:8px;}
+    .divInner{background:#fff;display:inherit;padding:5px;}
+    .divTitle{display:inherit;height:26px;line-height:26px;}
+    .divTitle a{cursor:pointer;text-decoration:none;position:absolute;right:20px;top:20px;}
+    .divTitle a img{border:none;}
+    .divCon{overflow:auto;}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    <div>
+    <a href="javascript:void(0)" onclick="ss()">测试用链接</a>
+    </div>
+    <%--<iframe id="id" name="name" frameborder="0" width="800px" scrolling="yes" height="550px"
+                    onload="SetCwinHeight(this)" src="test.aspx"></iframe>--%>
+    </form>
+    <%--<div id="tDiv" class="mask">--%>
+    <div id="fDiv" style="display:none;height:800px;">
+    aljgaojgoajgaogsegsgsgsg<br />
+    aljgaojgoajgaogsegsgsgsg<br />
+    aljgaojgoajgaogsegsgsgsg<br />
+    aljgaojgoajgaogsegsgsgsg<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    agjaljgojgaosgjesojowajgwaegwageawegawgag<br />
+    <input type="text" />
+    <input type="button" value="agaog" />
+    </div>
+    <%--</div>--%>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.js"></script>
+<%--<script type="text/javascript" src="js/DivLayer.js"></script>--%>
+<script type="text/javascript">
+
+function ss(){
+    var html=getHtml("fDiv");
+    ShowLayer(html,200,200);
+}
+
+function getHtml(id){
+    var html=$("<p></p>").append($("#"+id).clone()).html();
+    return html;
+}
+
+function ShowLayer(html,dW,dH) {
+    var divBG="<div class='mask' id='mask'></div>";
+    var divHTML="<div class='layer' id='layer' style='width:"+ dW +"px;height:"+ dH +"px;'><div class='divInner' style='height:"+(dH-10)+"px;'><div class='divTitle'><a onclick='javascript:HiddenDiv();return false;' href='javascript:void(0);'><img src='/images/btn_close.gif' /></a></div><div class='divCon' style='max-height:"+(dH-36)+"px;'>"+html+"</div></div></div>";
+    
+    $("body").prepend(divBG+divHTML);
+    
+    //设置DIV位置top left    
+    var Scroll_H = document.body.scrollTop + document.documentElement.scrollTop;
+    var H = document.body.clientHeight;
+    var Page_H = document.documentElement.clientHeight;
+    Page_H = Page_H>H ? Page_H:H;
+    var top = Scroll_H / 2;
+    var left = (document.body.clientWidth - dW )/2;
+        
+    $("#layer").css({ "top": top + "px","left": left + "px","visibility": "visible" });
+    $(".divInner").find("div").css({ "display": "inherit" });
+}
+function HiddenDiv(){
+    $("#mask").remove();
+    $("#layer").remove();
+}
+</script>
